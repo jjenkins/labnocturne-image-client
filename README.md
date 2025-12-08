@@ -170,7 +170,6 @@ Supported image formats:
 
 - API Documentation: https://images.labnocturne.com/docs
 - GitHub Issues: https://github.com/jjenkins/labnocturne-image-client/issues
-- Main Project: https://github.com/jjenkins/labnocturne
 
 ## License
 
