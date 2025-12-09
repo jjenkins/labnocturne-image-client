@@ -1,0 +1,52 @@
+# Binaries
+/bin/
+**/bin/
+/tmp/
+**/tmp/
+
+# Generated templ files
+*_templ.go
+
+# Air log
+air.log
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Database
+/db/pgdata/
+
+# Environment
+.env
+.envrc
+.envrc.local
+
+# macOS
+.DS_Store
+
+# Test files
+**/test_images/
+**/.claude/
+*.pkg
+
+# Working notes and documentation
+**/notes/
+*.sql
+DOGFOODING_*.md
+TWEET_*.txt
+TWITTER_*.md
+preview.html
+
+# Built binaries
+**/bin/images
+**/app
+# Compiled binaries matching directory names
+flex/flex
+framework/framework
+images/images

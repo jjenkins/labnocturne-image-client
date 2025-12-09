@@ -1,0 +1,10 @@
+/*
+Copyright © 2025 NAME HERE <EMAIL ADDRESS>
+*/
+package main
+
+import "github.com/jjenkins/labnocturne/flex/cmd"
+
+func main() {
+	cmd.Execute()
+}
