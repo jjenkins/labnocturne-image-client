@@ -14,3 +14,19 @@ func HomeHandler() fiber.Handler {
 		return handler(c)
 	}
 }
+
+func Option1Handler() fiber.Handler {
+	return func(c *fiber.Ctx) error {
+		page := templates.Option1Home()
+		handler := adaptor.HTTPHandler(templ.Handler(page))
+		return handler(c)
+	}
+}
+
+func Option2Handler() fiber.Handler {
+	return func(c *fiber.Ctx) error {
+		page := templates.Option2Home()
+		handler := adaptor.HTTPHandler(templ.Handler(page))
+		return handler(c)
+	}
+}

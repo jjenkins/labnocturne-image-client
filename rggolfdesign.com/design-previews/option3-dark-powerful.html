@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option 3: Dark/Powerful - RG Golf Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-black: #000000;
+            --color-charcoal: #0d0d0d;
+            --color-dark-gray: #1a1a1a;
+            --color-medium-gray: #2a2a2a;
+            --color-light-gray: #888888;
+            --color-white: #ffffff;
+            --color-red: #ff0044;
+            --color-red-glow: #ff0044;
+
+            --font-display: 'Rajdhani', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-black);
+            color: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background: var(--color-black);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Dramatic background with heavy vignette */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.7) 50%, #000 100%),
+                linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.9) 100%),
+                url('https://images.labnocturne.com/i/01KC0TZ5J5YVFJDPZVZBQX09E5.jpg') center/cover;
+        }
+
+        /* Red accent glow effects */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 0, 68, 0.15) 0%, transparent 70%);
+            filter: blur(80px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-red) 50%, transparent);
+            box-shadow: 0 0 20px var(--color-red-glow);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--color-red);
+            box-shadow: 0 0 10px var(--color-red-glow);
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(4.5rem, 11vw, 9rem);
+            font-weight: 700;
+            line-height: 0.9;
+            color: var(--color-white);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 30px rgba(255, 0, 68, 0.3);
+        }
+
+        .hero-title-line {
+            display: block;
+        }
+
+        .hero-title-accent {
+            background: linear-gradient(135deg, var(--color-red) 0%, #ff3366 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 20px rgba(255, 0, 68, 0.5));
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-light-gray);
+            max-width: 550px;
+            margin-bottom: 3.5rem;
+            font-weight: 500;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 1.25rem 2.5rem;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--color-red);
+            color: var(--color-white);
+            box-shadow: 0 0 30px rgba(255, 0, 68, 0.4);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 50px rgba(255, 0, 68, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-white);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Performance Metrics */
+        .metrics {
+            position: absolute;
+            right: 3rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .metric {
+            text-align: right;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-right: 2px solid var(--color-red);
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-value {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-red);
+            line-height: 1;
+            display: block;
+            text-shadow: 0 0 20px rgba(255, 0, 68, 0.5);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-light-gray);
+            margin-top: 0.5rem;
+        }
+
+        /* Tech Specs Section */
+        .tech-specs {
+            padding: 8rem 0;
+            background: linear-gradient(to bottom, var(--color-black) 0%, var(--color-charcoal) 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-white);
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--color-light-gray);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .spec-card {
+            background: var(--color-dark-gray);
+            padding: 3rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .spec-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-red), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .spec-card:hover {
+            background: var(--color-medium-gray);
+            border-color: var(--color-red);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(255, 0, 68, 0.2);
+        }
+
+        .spec-card:hover::before {
+            opacity: 1;
+        }
+
+        .spec-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            filter: grayscale(1);
+            opacity: 0.7;
+            transition: all 0.4s ease;
+        }
+
+        .spec-card:hover .spec-icon {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        .spec-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+
+        .spec-description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--color-light-gray);
+        }
+
+        /* Design Label */
+        .design-label {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-red);
+            color: var(--color-white);
+            padding: 0.75rem 1.5rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 1000;
+            box-shadow: 0 0 30px rgba(255, 0, 68, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .metrics {
+                position: static;
+                transform: none;
+                flex-direction: row;
+                justify-content: space-around;
+                margin-top: 4rem;
+            }
+
+            .metric {
+                text-align: center;
+                border-right: none;
+                border-bottom: 2px solid var(--color-red);
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="design-label">OPTION 3: DARK/POWERFUL</div>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-badge">
+                <span>RALEIGH PREMIUM</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-title-line">DOMINATE</span>
+                <span class="hero-title-line">YOUR</span>
+                <span class="hero-title-line"><span class="hero-title-accent">GAME</span></span>
+            </h1>
+            <p class="hero-description">
+                Uncompromising performance meets cutting-edge technology. Premium golf simulators engineered for those who demand the absolute best.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#" class="btn btn-primary">Configure System</a>
+                <a href="#" class="btn btn-secondary">Explore Tech</a>
+            </div>
+        </div>
+
+        <div class="metrics">
+            <div class="metric">
+                <span class="metric-value">500+</span>
+                <div class="metric-label">Elite Installs</div>
+            </div>
+            <div class="metric">
+                <span class="metric-value">15ft</span>
+                <div class="metric-label">Max Width</div>
+            </div>
+            <div class="metric">
+                <span class="metric-value">4K</span>
+                <div class="metric-label">Resolution</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-specs">
+        <div class="section-header">
+            <h2 class="section-title">SUPERIOR TECHNOLOGY</h2>
+            <p class="section-subtitle">Engineered for champions who settle for nothing less than perfection</p>
+        </div>
+
+        <div class="specs-grid">
+            <div class="spec-card">
+                <div class="spec-icon">⚡</div>
+                <h3 class="spec-title">Power</h3>
+                <p class="spec-description">Lightning-fast processing delivers real-time ball tracking with zero latency. Experience golf as it was meant to be played.</p>
+            </div>
+            <div class="spec-card">
+                <div class="spec-icon">🎯</div>
+                <h3 class="spec-title">Precision</h3>
+                <p class="spec-description">Sub-millimeter accuracy captures every detail. Professional-grade sensors used by tour players worldwide.</p>
+            </div>
+            <div class="spec-card">
+                <div class="spec-icon">💎</div>
+                <h3 class="spec-title">Luxury</h3>
+                <p class="spec-description">Premium materials and meticulous craftsmanship. Each installation is a masterpiece of engineering and design.</p>
+            </div>
+            <div class="spec-card">
+                <div class="spec-icon">🔧</div>
+                <h3 class="spec-title">Support</h3>
+                <p class="spec-description">Lifetime technical support and maintenance. We stand behind every system we build with unwavering commitment.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

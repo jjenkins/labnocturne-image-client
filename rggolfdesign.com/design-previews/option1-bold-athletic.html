@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option 1: Bold/Athletic - RG Golf Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-black: #0a0a0a;
+            --color-charcoal: #1a1a1a;
+            --color-white: #ffffff;
+            --color-concrete: #e8e8e8;
+            --color-steel: #888888;
+            --color-electric: #00ff88;
+            --color-electric-dark: #00cc6a;
+
+            --font-display: 'Oswald', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-white);
+            color: var(--color-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background:
+                linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.85) 100%),
+                url('https://images.labnocturne.com/i/01KC0TZ5J5YVFJDPZVZBQX09E5.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Diagonal stripe accent */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 40%;
+            height: 120%;
+            background: linear-gradient(135deg, transparent 0%, var(--color-electric) 100%);
+            opacity: 0.08;
+            transform: skewX(-15deg);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--color-electric);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-electric);
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 700;
+            line-height: 0.9;
+            color: var(--color-white);
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title-line {
+            display: block;
+        }
+
+        .hero-title-accent {
+            color: var(--color-electric);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--color-concrete);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.25rem 2.5rem;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--color-electric);
+            color: var(--color-black);
+            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-electric-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-white);
+            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-white);
+            color: var(--color-black);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            position: absolute;
+            bottom: 4rem;
+            left: 2rem;
+            right: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-electric);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-concrete);
+        }
+
+        /* Philosophy Section Preview */
+        .philosophy {
+            padding: 8rem 2rem;
+            background: var(--color-concrete);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-black);
+            margin-bottom: 4rem;
+            letter-spacing: -1px;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .philosophy-card {
+            background: var(--color-white);
+            padding: 3rem;
+            border: 1px solid #ddd;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .philosophy-card:hover {
+            background: var(--color-black);
+            color: var(--color-white);
+            border-color: var(--color-electric);
+            transform: scale(1.02);
+            z-index: 2;
+        }
+
+        .philosophy-card:hover .philosophy-icon {
+            color: var(--color-electric);
+        }
+
+        .philosophy-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .philosophy-card-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .philosophy-card-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-steel);
+        }
+
+        .philosophy-card:hover .philosophy-card-text {
+            color: var(--color-concrete);
+        }
+
+        /* Design Label */
+        .design-label {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-electric);
+            color: var(--color-black);
+            padding: 0.75rem 1.5rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 1000;
+            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                bottom: 2rem;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="design-label">OPTION 1: BOLD/ATHLETIC</div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-eyebrow">RG Golf Design</div>
+            <h1 class="hero-title">
+                <span class="hero-title-line">ELITE</span>
+                <span class="hero-title-line"><span class="hero-title-accent">PERFORMANCE</span></span>
+                <span class="hero-title-line">GOLF</span>
+            </h1>
+            <p class="hero-description">
+                Precision-engineered golf simulators built for champions. Transform your space into a high-performance training facility.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="#" class="btn btn-secondary">View Systems</a>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Installations</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">15ft</div>
+                <div class="stat-label">Screen Width</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">4K</div>
+                <div class="stat-label">Ultra HD</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="container">
+            <h2 class="section-title">BUILT DIFFERENT</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">⚡</div>
+                    <h3 class="philosophy-card-title">Power</h3>
+                    <p class="philosophy-card-text">Pro-grade tracking technology that captures every detail of your swing with unmatched precision.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🎯</div>
+                    <h3 class="philosophy-card-title">Precision</h3>
+                    <p class="philosophy-card-text">Military-grade accuracy in ball flight simulation. Train like the pros, play like a champion.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="philosophy-card-icon">💪</div>
+                    <h3 class="philosophy-card-title">Performance</h3>
+                    <p class="philosophy-card-text">Built to withstand intense training sessions. Professional installation, lifetime support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

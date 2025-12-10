@@ -30,6 +30,8 @@ var serveCmd = &cobra.Command{
 
 		// Routes
 		app.Get("/", handlers.HomeHandler())
+		app.Get("/option1", handlers.Option1Handler())
+		app.Get("/option2", handlers.Option2Handler())
 		app.Post("/api/consultation", handlers.ConsultationHandler())
 
 		log.Printf("Starting RG Golf Design server on http://localhost:%s", port)
