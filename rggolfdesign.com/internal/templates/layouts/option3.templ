@@ -1,6 +1,6 @@
 package layouts
 
-templ Option1Base(title string) {
+templ Option3Base(title string) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -16,19 +16,21 @@ templ Option1Base(title string) {
 			<script src="https://unpkg.com/htmx.org@1.9.10"></script>
 			<link rel="preconnect" href="https://fonts.googleapis.com"/>
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-			<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+			<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 			<style type="text/css">
 				:root {
-					--color-black: #0a0a0a;
-					--color-charcoal: #1a1a1a;
+					--color-black: #000000;
+					--color-charcoal: #0d0d0d;
+					--color-dark-gray: #1a1a1a;
+					--color-medium-gray: #2a2a2a;
+					--color-light-gray: #888888;
 					--color-white: #ffffff;
-					--color-concrete: #e8e8e8;
-					--color-steel: #888888;
-					--color-electric: #00ff88;
-					--color-electric-dark: #00cc6a;
+					--color-red: #ff0044;
+					--color-red-dark: #cc0036;
+					--color-red-glow: rgba(255, 0, 68, 0.5);
 
-					--font-display: 'Oswald', sans-serif;
-					--font-body: 'Roboto', sans-serif;
+					--font-display: 'Rajdhani', sans-serif;
+					--font-body: 'Inter', sans-serif;
 				}
 
 				* {
@@ -39,8 +41,8 @@ templ Option1Base(title string) {
 
 				body {
 					font-family: var(--font-body);
-					background: var(--color-white);
-					color: var(--color-black);
+					background: var(--color-black);
+					color: var(--color-white);
 					line-height: 1.6;
 					overflow-x: hidden;
 				}
@@ -52,9 +54,9 @@ templ Option1Base(title string) {
 					left: 0;
 					right: 0;
 					z-index: 100;
-					background: rgba(10, 10, 10, 0.95);
+					background: rgba(0, 0, 0, 0.95);
 					backdrop-filter: blur(10px);
-					border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+					border-bottom: 1px solid rgba(255, 0, 68, 0.2);
 					transition: all 0.3s ease;
 				}
 
@@ -71,6 +73,7 @@ templ Option1Base(title string) {
 					height: 50px;
 					width: auto;
 					transition: transform 0.3s ease;
+					filter: brightness(1.2);
 				}
 
 				.nav-logo:hover {
@@ -86,12 +89,12 @@ templ Option1Base(title string) {
 				.nav-link {
 					font-family: var(--font-display);
 					font-size: 0.875rem;
-					font-weight: 600;
+					font-weight: 700;
 					letter-spacing: 2px;
 					text-transform: uppercase;
 					color: rgba(255, 255, 255, 0.8);
 					text-decoration: none;
-					transition: color 0.3s ease;
+					transition: all 0.3s ease;
 					position: relative;
 				}
 
@@ -102,7 +105,8 @@ templ Option1Base(title string) {
 					left: 0;
 					width: 0;
 					height: 2px;
-					background: var(--color-electric);
+					background: var(--color-red);
+					box-shadow: 0 0 10px var(--color-red-glow);
 					transition: width 0.3s ease;
 				}
 
@@ -116,8 +120,8 @@ templ Option1Base(title string) {
 
 				.nav-cta {
 					padding: 0.75rem 1.5rem;
-					background: var(--color-electric);
-					color: var(--color-black);
+					background: var(--color-red);
+					color: var(--color-white);
 					font-family: var(--font-display);
 					font-size: 0.75rem;
 					font-weight: 700;
@@ -125,12 +129,13 @@ templ Option1Base(title string) {
 					text-transform: uppercase;
 					text-decoration: none;
 					transition: all 0.3s ease;
+					box-shadow: 0 0 20px var(--color-red-glow);
 				}
 
 				.nav-cta:hover {
-					background: var(--color-electric-dark);
+					background: var(--color-red-dark);
 					transform: translateY(-2px);
-					box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+					box-shadow: 0 0 30px var(--color-red-glow), 0 4px 15px rgba(255, 0, 68, 0.4);
 				}
 
 				.mobile-menu-toggle {
@@ -146,8 +151,9 @@ templ Option1Base(title string) {
 				.mobile-menu-toggle span {
 					width: 28px;
 					height: 2px;
-					background: var(--color-electric);
+					background: var(--color-red);
 					transition: all 0.3s ease;
+					box-shadow: 0 0 5px var(--color-red-glow);
 				}
 
 				.mobile-menu {
@@ -156,9 +162,9 @@ templ Option1Base(title string) {
 					top: 70px;
 					left: 0;
 					right: 0;
-					background: rgba(10, 10, 10, 0.98);
+					background: rgba(0, 0, 0, 0.98);
 					backdrop-filter: blur(10px);
-					border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+					border-bottom: 1px solid rgba(255, 0, 68, 0.2);
 					z-index: 99;
 					padding: 2rem;
 					flex-direction: column;
@@ -180,13 +186,22 @@ templ Option1Base(title string) {
 				.hero-section {
 					position: relative;
 					min-height: 100vh;
-					background:
-						linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(26, 26, 26, 0.80) 100%),
-						url('https://images.labnocturne.com/i/01KC0TZ5J5YVFJDPZVZBQX09E5.jpg') 35% center/cover;
+					background: var(--color-black);
 					display: flex;
 					align-items: center;
 					overflow: hidden;
 					padding-top: 80px;
+				}
+
+				.hero-section::before {
+					content: '';
+					position: absolute;
+					inset: 0;
+					background:
+						radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.7) 50%, #000 100%),
+						linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.9) 100%),
+						url('https://images.labnocturne.com/i/01KC0TZ5J5YVFJDPZVZBQX09E5.jpg') 35% center/cover;
+					z-index: 0;
 				}
 
 				.hero-section::after {
@@ -195,8 +210,34 @@ templ Option1Base(title string) {
 					bottom: 0;
 					left: 0;
 					right: 0;
-					height: 3px;
-					background: var(--color-electric);
+					height: 2px;
+					background: linear-gradient(90deg, transparent, var(--color-red) 50%, transparent);
+					box-shadow: 0 0 20px var(--color-red-glow);
+					z-index: 1;
+				}
+
+				/* Red glow accent */
+				.hero-glow {
+					position: absolute;
+					top: 20%;
+					left: -10%;
+					width: 600px;
+					height: 600px;
+					background: radial-gradient(circle, rgba(255, 0, 68, 0.15) 0%, transparent 70%);
+					filter: blur(80px);
+					animation: pulse 4s ease-in-out infinite;
+					z-index: 0;
+				}
+
+				@keyframes pulse {
+					0%, 100% {
+						opacity: 0.5;
+						transform: scale(1);
+					}
+					50% {
+						opacity: 0.8;
+						transform: scale(1.1);
+					}
 				}
 
 				.hero-content {
@@ -204,7 +245,7 @@ templ Option1Base(title string) {
 					margin: 0 auto;
 					padding: 0 2rem;
 					position: relative;
-					z-index: 1;
+					z-index: 2;
 					width: 100%;
 				}
 
@@ -218,24 +259,46 @@ templ Option1Base(title string) {
 				}
 
 				.hero-eyebrow {
+					display: inline-flex;
+					align-items: center;
+					gap: 0.75rem;
+					padding: 0.75rem 1.5rem;
+					background: rgba(255, 255, 255, 0.05);
+					border: 1px solid rgba(255, 255, 255, 0.1);
+					backdrop-filter: blur(10px);
 					font-family: var(--font-body);
 					font-size: 0.75rem;
 					font-weight: 700;
-					letter-spacing: 4px;
+					letter-spacing: 3px;
 					text-transform: uppercase;
-					color: var(--color-electric);
-					margin-bottom: 2rem;
+					color: var(--color-white);
+					margin-bottom: 3rem;
+				}
+
+				.hero-eyebrow::before {
+					content: '';
+					width: 8px;
+					height: 8px;
+					background: var(--color-red);
+					box-shadow: 0 0 10px var(--color-red-glow);
+					animation: blink 2s ease-in-out infinite;
+				}
+
+				@keyframes blink {
+					0%, 100% { opacity: 1; }
+					50% { opacity: 0.3; }
 				}
 
 				.hero-title {
 					font-family: var(--font-display);
-					font-size: clamp(4rem, 10vw, 8rem);
+					font-size: clamp(4.5rem, 11vw, 9rem);
 					font-weight: 700;
-					line-height: 0.85;
+					line-height: 0.75;
 					color: var(--color-white);
 					text-transform: uppercase;
-					letter-spacing: -2px;
-					margin-bottom: 1.5rem;
+					letter-spacing: 4px;
+					margin-bottom: 2rem;
+					text-shadow: 0 0 30px rgba(255, 0, 68, 0.3);
 				}
 
 				.hero-title-line {
@@ -243,18 +306,20 @@ templ Option1Base(title string) {
 				}
 
 				.hero-title-accent {
-					color: var(--color-electric);
-					font-style: italic;
-					font-weight: 600;
+					background: linear-gradient(135deg, var(--color-red) 0%, #ff3366 100%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					background-clip: text;
+					filter: drop-shadow(0 0 20px rgba(255, 0, 68, 0.5));
 				}
 
 				.hero-description {
-					font-size: 1.25rem;
-					line-height: 1.7;
-					color: var(--color-concrete);
-					max-width: 600px;
-					margin-bottom: 3rem;
-					font-weight: 400;
+					font-size: 1.125rem;
+					line-height: 1.8;
+					color: var(--color-light-gray);
+					max-width: 550px;
+					margin-bottom: 3.5rem;
+					font-weight: 500;
 				}
 
 				.hero-cta-group {
@@ -265,45 +330,6 @@ templ Option1Base(title string) {
 
 				.hero-image-container {
 					display: none;
-				}
-
-				.scroll-indicator {
-					position: absolute;
-					bottom: 3rem;
-					left: 50%;
-					transform: translateX(-50%);
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					gap: 1rem;
-					color: rgba(255, 255, 255, 0.6);
-				}
-
-				.scroll-text {
-					font-size: 0.75rem;
-					letter-spacing: 2px;
-					text-transform: uppercase;
-				}
-
-				.scroll-line {
-					width: 1px;
-					height: 60px;
-					background: linear-gradient(to bottom, var(--color-electric), transparent);
-					animation: scrollLine 2s ease-in-out infinite;
-				}
-
-				@keyframes scrollLine {
-					0%, 100% {
-						transform: translateY(0);
-						opacity: 0;
-					}
-					50% {
-						opacity: 1;
-					}
-					100% {
-						transform: translateY(20px);
-						opacity: 0;
-					}
 				}
 
 				/* Stats Bar */
@@ -319,6 +345,7 @@ templ Option1Base(title string) {
 					gap: 3rem;
 					padding: 2rem 0;
 					border-top: 1px solid rgba(255, 255, 255, 0.2);
+					z-index: 2;
 				}
 
 				.stat {
@@ -329,9 +356,10 @@ templ Option1Base(title string) {
 					font-family: var(--font-display);
 					font-size: 3rem;
 					font-weight: 700;
-					color: var(--color-electric);
+					color: var(--color-red);
 					line-height: 1;
 					margin-bottom: 0.5rem;
+					text-shadow: 0 0 20px rgba(255, 0, 68, 0.5);
 				}
 
 				.stat-label {
@@ -339,7 +367,7 @@ templ Option1Base(title string) {
 					font-weight: 700;
 					text-transform: uppercase;
 					letter-spacing: 2px;
-					color: var(--color-concrete);
+					color: var(--color-light-gray);
 				}
 
 				/* Buttons */
@@ -347,7 +375,7 @@ templ Option1Base(title string) {
 					padding: 1.25rem 2.5rem;
 					font-family: var(--font-display);
 					font-size: 1rem;
-					font-weight: 600;
+					font-weight: 700;
 					text-transform: uppercase;
 					letter-spacing: 2px;
 					text-decoration: none;
@@ -358,27 +386,41 @@ templ Option1Base(title string) {
 					overflow: hidden;
 				}
 
+				.btn::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: -100%;
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+					transition: left 0.5s ease;
+				}
+
+				.btn:hover::before {
+					left: 100%;
+				}
+
 				.btn-primary {
-					background: var(--color-electric);
-					color: var(--color-black);
+					background: var(--color-red);
+					color: var(--color-white);
+					box-shadow: 0 0 30px rgba(255, 0, 68, 0.4);
 				}
 
 				.btn-primary:hover {
-					background: var(--color-electric-dark);
+					box-shadow: 0 0 50px rgba(255, 0, 68, 0.6);
 					transform: translateY(-2px);
-					box-shadow: 0 8px 30px rgba(0, 255, 136, 0.4);
 				}
 
 				.btn-secondary {
 					background: transparent;
 					color: var(--color-white);
-					border: 2px solid var(--color-white);
+					border: 2px solid rgba(255, 255, 255, 0.3);
 				}
 
 				.btn-secondary:hover {
-					background: var(--color-white);
-					color: var(--color-black);
-					transform: translateY(-2px);
+					border-color: var(--color-white);
+					background: rgba(255, 255, 255, 0.05);
 				}
 
 				.btn-full {
@@ -387,12 +429,6 @@ templ Option1Base(title string) {
 				}
 
 				/* Container */
-				.container {
-					max-width: 1400px;
-					margin: 0 auto;
-					padding: 0 2rem;
-				}
-
 				.container-narrow {
 					max-width: 1000px;
 					margin: 0 auto;
@@ -410,7 +446,7 @@ templ Option1Base(title string) {
 					font-size: 0.75rem;
 					letter-spacing: 4px;
 					text-transform: uppercase;
-					color: var(--color-electric);
+					color: var(--color-red);
 					font-weight: 700;
 					margin-bottom: 1rem;
 				}
@@ -421,9 +457,9 @@ templ Option1Base(title string) {
 					font-weight: 700;
 					line-height: 1.1;
 					text-transform: uppercase;
-					color: var(--color-black);
+					color: var(--color-white);
 					margin-bottom: 1.5rem;
-					letter-spacing: -1px;
+					letter-spacing: 3px;
 				}
 
 				.section-title-light {
@@ -434,12 +470,12 @@ templ Option1Base(title string) {
 					line-height: 1.1;
 					text-transform: uppercase;
 					margin-bottom: 1.5rem;
-					letter-spacing: -1px;
+					letter-spacing: 3px;
 				}
 
 				.section-subtitle {
 					font-size: 1.125rem;
-					color: var(--color-steel);
+					color: var(--color-light-gray);
 					margin-top: 1rem;
 					max-width: 600px;
 					margin-left: auto;
@@ -449,7 +485,8 @@ templ Option1Base(title string) {
 				/* Philosophy Section */
 				.philosophy-section {
 					padding: 8rem 0;
-					background: var(--color-concrete);
+					background: linear-gradient(to bottom, var(--color-black) 0%, var(--color-charcoal) 100%);
+					border-top: 1px solid rgba(255, 255, 255, 0.1);
 				}
 
 				.philosophy-grid {
@@ -461,58 +498,67 @@ templ Option1Base(title string) {
 				}
 
 				.philosophy-card {
-					background: var(--color-white);
+					background: var(--color-dark-gray);
 					padding: 3rem;
-					border: 1px solid #ddd;
+					border: 1px solid rgba(255, 255, 255, 0.1);
 					position: relative;
-					transition: all 0.3s ease;
+					transition: all 0.4s ease;
 					text-align: center;
 				}
 
+				.philosophy-card::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 2px;
+					background: linear-gradient(90deg, var(--color-red), transparent);
+					opacity: 0;
+					transition: opacity 0.4s ease;
+				}
+
 				.philosophy-card:hover {
-					background: var(--color-black);
-					color: var(--color-white);
-					border-color: var(--color-electric);
-					transform: scale(1.02);
+					background: var(--color-medium-gray);
+					border-color: var(--color-red);
+					transform: translateY(-5px);
+					box-shadow: 0 10px 40px rgba(255, 0, 68, 0.2);
 					z-index: 2;
 				}
 
-				.philosophy-card:hover .philosophy-number {
-					color: var(--color-electric);
+				.philosophy-card:hover::before {
+					opacity: 1;
 				}
 
 				.philosophy-number {
 					font-family: var(--font-display);
 					font-size: 3.5rem;
 					font-weight: 700;
-					color: var(--color-electric);
+					color: var(--color-red);
 					margin-bottom: 1.5rem;
-					transition: color 0.3s ease;
+					text-shadow: 0 0 20px rgba(255, 0, 68, 0.5);
 				}
 
 				.philosophy-card-title {
 					font-family: var(--font-display);
-					font-size: 1.5rem;
-					font-weight: 600;
+					font-size: 1.75rem;
+					font-weight: 700;
 					text-transform: uppercase;
 					margin-bottom: 1rem;
-					letter-spacing: 1px;
+					letter-spacing: 2px;
+					color: var(--color-white);
 				}
 
 				.philosophy-card-text {
-					font-size: 1rem;
+					font-size: 0.95rem;
 					line-height: 1.7;
-					color: var(--color-steel);
-				}
-
-				.philosophy-card:hover .philosophy-card-text {
-					color: var(--color-concrete);
+					color: var(--color-light-gray);
 				}
 
 				/* Services Section */
 				.services-section {
 					padding: 8rem 0;
-					background: var(--color-white);
+					background: var(--color-charcoal);
 				}
 
 				.services-grid {
@@ -522,18 +568,34 @@ templ Option1Base(title string) {
 				}
 
 				.service-card {
-					background: var(--color-white);
-					border: 1px solid #ddd;
-					transition: all 0.3s ease;
+					background: var(--color-dark-gray);
+					border: 1px solid rgba(255, 255, 255, 0.1);
+					transition: all 0.4s ease;
 					position: relative;
 				}
 
+				.service-card::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 2px;
+					background: linear-gradient(90deg, var(--color-red), transparent);
+					opacity: 0;
+					transition: opacity 0.4s ease;
+				}
+
 				.service-card:hover {
-					background: var(--color-black);
-					color: var(--color-white);
-					border-color: var(--color-electric);
+					background: var(--color-medium-gray);
+					border-color: var(--color-red);
 					transform: scale(1.02);
+					box-shadow: 0 10px 40px rgba(255, 0, 68, 0.2);
 					z-index: 2;
+				}
+
+				.service-card:hover::before {
+					opacity: 1;
 				}
 
 				.service-card-large {
@@ -552,39 +614,43 @@ templ Option1Base(title string) {
 				.service-badge {
 					display: inline-block;
 					padding: 0.5rem 1rem;
-					background: var(--color-electric);
-					color: var(--color-black);
+					background: var(--color-red);
+					color: var(--color-white);
 					font-size: 0.75rem;
 					letter-spacing: 2px;
 					text-transform: uppercase;
 					font-weight: 700;
 					margin-bottom: 2rem;
 					align-self: flex-start;
+					box-shadow: 0 0 20px var(--color-red-glow);
 				}
 
 				.service-title {
 					font-family: var(--font-display);
 					font-size: 2.5rem;
-					font-weight: 600;
+					font-weight: 700;
 					line-height: 1.15;
 					text-transform: uppercase;
 					margin-bottom: 1.5rem;
-					letter-spacing: 1px;
+					letter-spacing: 2px;
+					color: var(--color-white);
 				}
 
 				.service-title-sm {
 					font-family: var(--font-display);
 					font-size: 1.75rem;
-					font-weight: 600;
+					font-weight: 700;
 					text-transform: uppercase;
 					margin-bottom: 1rem;
-					letter-spacing: 1px;
+					letter-spacing: 2px;
+					color: var(--color-white);
 				}
 
 				.service-description {
 					font-size: 1.125rem;
 					line-height: 1.7;
 					margin-bottom: 2.5rem;
+					color: var(--color-light-gray);
 				}
 
 				.service-description-sm {
@@ -592,6 +658,7 @@ templ Option1Base(title string) {
 					line-height: 1.7;
 					margin-bottom: auto;
 					padding-bottom: 2rem;
+					color: var(--color-light-gray);
 				}
 
 				.service-features {
@@ -605,17 +672,14 @@ templ Option1Base(title string) {
 					gap: 1rem;
 					padding: 0.75rem 0;
 					font-size: 1rem;
+					color: var(--color-light-gray);
 				}
 
 				.feature-check {
 					width: 24px;
 					height: 24px;
-					color: var(--color-electric);
+					color: var(--color-red);
 					flex-shrink: 0;
-				}
-
-				.service-card:hover .feature-check {
-					color: var(--color-electric);
 				}
 
 				.service-cta {
@@ -627,11 +691,11 @@ templ Option1Base(title string) {
 					text-decoration: none;
 					margin-top: auto;
 					transition: all 0.3s ease;
-					color: inherit;
+					color: var(--color-white);
 				}
 
 				.service-cta:hover {
-					color: var(--color-electric);
+					color: var(--color-red);
 					transform: translateX(4px);
 				}
 
@@ -640,14 +704,14 @@ templ Option1Base(title string) {
 					font-size: 1rem;
 					font-weight: 700;
 					text-decoration: none;
-					border-bottom: 2px solid var(--color-electric);
+					border-bottom: 2px solid var(--color-red);
 					padding-bottom: 0.25rem;
 					transition: all 0.3s ease;
-					color: inherit;
+					color: var(--color-white);
 				}
 
 				.service-cta-sm:hover {
-					color: var(--color-electric);
+					color: var(--color-red);
 				}
 
 				/* Experience Section */
@@ -663,7 +727,8 @@ templ Option1Base(title string) {
 					position: absolute;
 					inset: 0;
 					background:
-						linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(26, 26, 26, 0.9) 100%),
+						radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.7) 50%, #000 100%),
+						linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.95) 100%),
 						url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1600&q=80') center/cover;
 					opacity: 1;
 				}
@@ -694,7 +759,7 @@ templ Option1Base(title string) {
 				}
 
 				.stat-item {
-					border-top: 2px solid var(--color-electric);
+					border-top: 2px solid var(--color-red);
 					padding-top: 1.5rem;
 				}
 
@@ -702,9 +767,10 @@ templ Option1Base(title string) {
 					font-family: var(--font-display);
 					font-size: 3.5rem;
 					font-weight: 700;
-					color: var(--color-electric);
+					color: var(--color-red);
 					line-height: 1;
 					margin-bottom: 0.75rem;
+					text-shadow: 0 0 20px rgba(255, 0, 68, 0.5);
 				}
 
 				.stat-label {
@@ -718,7 +784,7 @@ templ Option1Base(title string) {
 				/* Gallery Section */
 				.gallery-section {
 					padding: 8rem 0;
-					background: var(--color-white);
+					background: var(--color-charcoal);
 				}
 
 				.gallery-grid {
@@ -733,14 +799,15 @@ templ Option1Base(title string) {
 					position: relative;
 					overflow: hidden;
 					cursor: pointer;
-					border: 1px solid #ddd;
+					border: 1px solid rgba(255, 255, 255, 0.1);
 					transition: all 0.3s ease;
 				}
 
 				.gallery-item:hover {
 					transform: scale(1.02);
 					z-index: 2;
-					border-color: var(--color-electric);
+					border-color: var(--color-red);
+					box-shadow: 0 10px 40px rgba(255, 0, 68, 0.2);
 				}
 
 				.gallery-item-large {
@@ -761,10 +828,12 @@ templ Option1Base(title string) {
 					height: 100%;
 					object-fit: cover;
 					transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+					filter: grayscale(0.3);
 				}
 
 				.gallery-item:hover .gallery-image {
 					transform: scale(1.08);
+					filter: grayscale(0);
 				}
 
 				.gallery-overlay {
@@ -799,16 +868,16 @@ templ Option1Base(title string) {
 				.gallery-title {
 					font-family: var(--font-display);
 					font-size: 1.5rem;
-					font-weight: 600;
+					font-weight: 700;
 					text-transform: uppercase;
 					color: var(--color-white);
 					margin-bottom: 0.5rem;
-					letter-spacing: 1px;
+					letter-spacing: 2px;
 				}
 
 				.gallery-location {
 					font-size: 0.9rem;
-					color: var(--color-electric);
+					color: var(--color-red);
 					letter-spacing: 1px;
 					text-transform: uppercase;
 					font-weight: 700;
@@ -851,8 +920,8 @@ templ Option1Base(title string) {
 					right: 2rem;
 					width: 50px;
 					height: 50px;
-					background: var(--color-electric);
-					color: var(--color-black);
+					background: var(--color-red);
+					color: var(--color-white);
 					border: none;
 					cursor: pointer;
 					font-size: 2rem;
@@ -861,22 +930,25 @@ templ Option1Base(title string) {
 					justify-content: center;
 					transition: all 0.3s ease;
 					z-index: 9999;
+					box-shadow: 0 0 20px var(--color-red-glow);
 				}
 
 				.lightbox-close:hover {
-					background: var(--color-electric-dark);
+					background: var(--color-red-dark);
 					transform: rotate(90deg);
+					box-shadow: 0 0 30px var(--color-red-glow);
 				}
 
 				/* Consultation Section */
 				.consultation-section {
 					padding: 8rem 0;
-					background: var(--color-concrete);
+					background: var(--color-black);
+					border-top: 1px solid rgba(255, 255, 255, 0.1);
 				}
 
 				.consultation-card {
-					background: var(--color-white);
-					border: 1px solid #ddd;
+					background: var(--color-dark-gray);
+					border: 1px solid rgba(255, 255, 255, 0.1);
 				}
 
 				.consultation-content {
@@ -891,13 +963,14 @@ templ Option1Base(title string) {
 					text-transform: uppercase;
 					margin-bottom: 1rem;
 					text-align: center;
-					letter-spacing: 1px;
+					letter-spacing: 3px;
+					color: var(--color-white);
 				}
 
 				.consultation-description {
 					font-size: 1.125rem;
 					line-height: 1.8;
-					color: var(--color-steel);
+					color: var(--color-light-gray);
 					margin-bottom: 3rem;
 					text-align: center;
 					max-width: 600px;
@@ -929,22 +1002,28 @@ templ Option1Base(title string) {
 					font-weight: 700;
 					letter-spacing: 2px;
 					text-transform: uppercase;
+					color: var(--color-white);
 				}
 
 				.form-input {
 					padding: 1rem 1.25rem;
-					border: 1px solid #ddd;
-					background: var(--color-concrete);
+					border: 1px solid rgba(255, 255, 255, 0.2);
+					background: var(--color-medium-gray);
 					font-family: var(--font-body);
 					font-size: 1rem;
 					transition: all 0.3s ease;
+					color: var(--color-white);
+				}
+
+				.form-input::placeholder {
+					color: var(--color-light-gray);
 				}
 
 				.form-input:focus {
 					outline: none;
-					border-color: var(--color-electric);
-					background: var(--color-white);
-					box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+					border-color: var(--color-red);
+					background: var(--color-dark-gray);
+					box-shadow: 0 0 0 3px rgba(255, 0, 68, 0.2);
 				}
 
 				select.form-input {
@@ -961,6 +1040,7 @@ templ Option1Base(title string) {
 					background: var(--color-black);
 					color: rgba(255, 255, 255, 0.8);
 					padding: 5rem 0 2rem;
+					border-top: 1px solid rgba(255, 255, 255, 0.1);
 				}
 
 				.footer-content {
@@ -983,6 +1063,7 @@ templ Option1Base(title string) {
 				.footer-logo-img {
 					height: 70px;
 					width: auto;
+					filter: brightness(1.2);
 				}
 
 				.footer-tagline {
@@ -1008,7 +1089,7 @@ templ Option1Base(title string) {
 				}
 
 				.social-link:hover {
-					color: var(--color-electric);
+					color: var(--color-red);
 					transform: translateY(-3px);
 				}
 
@@ -1029,7 +1110,7 @@ templ Option1Base(title string) {
 				}
 
 				.footer-contact-link:hover {
-					color: var(--color-electric);
+					color: var(--color-red);
 				}
 
 				/* Responsive */
@@ -1088,10 +1169,6 @@ templ Option1Base(title string) {
 					.btn {
 						width: 100%;
 						text-align: center;
-					}
-
-					.scroll-indicator {
-						display: none;
 					}
 
 					.stats-bar {
@@ -1290,6 +1367,7 @@ templ Option1Base(title string) {
 			</script>
 		</head>
 		<body>
+			<div class="hero-glow"></div>
 			{ children... }
 		</body>
 	</html>

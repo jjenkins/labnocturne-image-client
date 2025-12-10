@@ -30,3 +30,11 @@ func Option2Handler() fiber.Handler {
 		return handler(c)
 	}
 }
+
+func Option3Handler() fiber.Handler {
+	return func(c *fiber.Ctx) error {
+		page := templates.Option3Home()
+		handler := adaptor.HTTPHandler(templ.Handler(page))
+		return handler(c)
+	}
+}
