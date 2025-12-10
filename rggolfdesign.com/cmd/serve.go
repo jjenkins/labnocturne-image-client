@@ -29,7 +29,7 @@ var serveCmd = &cobra.Command{
 		app.Use(logger.New())
 
 		// Routes
-		app.Get("/", handlers.HomeHandler())
+		app.Get("/", handlers.Option2Handler())
 		app.Get("/option1", handlers.Option1Handler())
 		app.Get("/option2", handlers.Option2Handler())
 		app.Get("/option3", handlers.Option3Handler())

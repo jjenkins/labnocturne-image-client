@@ -45,8 +45,9 @@ func ConsultationHandler() fiber.Handler {
 			sheetName = "Consultations" // Default sheet name
 		}
 
-		// Create sheets service and append request asynchronously
+		// Create sheets service and email service
 		sheetsService := service.NewSheetsService(spreadsheetID, sheetName)
+		emailService := service.NewEmailService()
 
 		req := service.ConsultationRequest{
 			Name:       name,
@@ -58,14 +59,24 @@ func ConsultationHandler() fiber.Handler {
 			Message:    message,
 		}
 
-		// Send to Google Sheets in background
+		// Send to Google Sheets and email in background
 		go func() {
 			ctx := context.Background()
+
+			// Log to Google Sheets
 			err := sheetsService.AppendConsultationRequest(ctx, req)
 			if err != nil {
 				log.Printf("Error appending to sheet: %v (Name: %s, Email: %s)", err, name, email)
 			} else {
 				log.Printf("Successfully logged consultation request: %s (%s)", name, email)
+			}
+
+			// Send follow-up email
+			err = emailService.SendConsultationFollowUp(ctx, name, email)
+			if err != nil {
+				log.Printf("Error sending follow-up email: %v (Email: %s)", err, email)
+			} else {
+				log.Printf("Successfully sent follow-up email to: %s", email)
 			}
 		}()
 
