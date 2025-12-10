@@ -16,6 +16,8 @@ func ConsultationHandler() fiber.Handler {
 		email := c.FormValue("email")
 		phone := c.FormValue("phone")
 		serviceType := c.FormValue("service")
+		budget := c.FormValue("budget")
+		dimensions := c.FormValue("dimensions")
 		message := c.FormValue("message")
 
 		// Validate required fields
@@ -47,11 +49,13 @@ func ConsultationHandler() fiber.Handler {
 		sheetsService := service.NewSheetsService(spreadsheetID, sheetName)
 
 		req := service.ConsultationRequest{
-			Name:    name,
-			Email:   email,
-			Phone:   phone,
-			Service: serviceType,
-			Message: message,
+			Name:       name,
+			Email:      email,
+			Phone:      phone,
+			Service:    serviceType,
+			Budget:     budget,
+			Dimensions: dimensions,
+			Message:    message,
 		}
 
 		// Send to Google Sheets in background

@@ -12,11 +12,13 @@ import (
 )
 
 type ConsultationRequest struct {
-	Name    string
-	Email   string
-	Phone   string
-	Service string
-	Message string
+	Name       string
+	Email      string
+	Phone      string
+	Service    string
+	Budget     string
+	Dimensions string
+	Message    string
 }
 
 type SheetsService struct {
@@ -58,6 +60,8 @@ func (s *SheetsService) AppendConsultationRequest(ctx context.Context, req Consu
 		req.Email,
 		req.Phone,
 		req.Service,
+		req.Budget,
+		req.Dimensions,
 		req.Message,
 	}
 
@@ -67,7 +71,7 @@ func (s *SheetsService) AppendConsultationRequest(ctx context.Context, req Consu
 	}
 
 	// Append to the sheet
-	appendRange := s.sheetName + "!A:F"
+	appendRange := s.sheetName + "!A:H"
 	_, err = srv.Spreadsheets.Values.Append(s.spreadsheetID, appendRange, valueRange).
 		ValueInputOption("USER_ENTERED").
 		InsertDataOption("INSERT_ROWS").

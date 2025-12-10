@@ -144,6 +144,32 @@ templ Option1Base(title string) {
 					transition: all 0.3s ease;
 				}
 
+				.mobile-menu {
+					display: none;
+					position: fixed;
+					top: 70px;
+					left: 0;
+					right: 0;
+					background: rgba(10, 10, 10, 0.98);
+					backdrop-filter: blur(10px);
+					border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+					z-index: 99;
+					padding: 2rem;
+					flex-direction: column;
+					gap: 1.5rem;
+				}
+
+				.mobile-menu.active {
+					display: flex;
+				}
+
+				.mobile-menu .nav-link,
+				.mobile-menu .nav-cta {
+					width: 100%;
+					text-align: center;
+					padding: 1rem;
+				}
+
 				/* Hero Section */
 				.hero-section {
 					position: relative;
@@ -1119,8 +1145,26 @@ templ Option1Base(title string) {
 				}
 			</style>
 			<script>
-				// Phone number formatting
 				document.addEventListener('DOMContentLoaded', function() {
+					// Mobile menu toggle
+					const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+					const mobileMenu = document.querySelector('.mobile-menu');
+
+					if (mobileMenuToggle && mobileMenu) {
+						mobileMenuToggle.addEventListener('click', function() {
+							mobileMenu.classList.toggle('active');
+						});
+
+						// Close mobile menu when clicking on a link
+						const mobileLinks = mobileMenu.querySelectorAll('a');
+						mobileLinks.forEach(link => {
+							link.addEventListener('click', function() {
+								mobileMenu.classList.remove('active');
+							});
+						});
+					}
+
+					// Phone number formatting
 					const phoneInput = document.getElementById('phone');
 					if (phoneInput) {
 						phoneInput.addEventListener('input', function(e) {

@@ -23,6 +23,11 @@ templ Option2Home() {
 				</button>
 			</div>
 		</nav>
+		<!-- Mobile Menu -->
+		<div class="mobile-menu">
+			<a href="#gallery" class="nav-link">See Recent Builds</a>
+			<a href="#consultation" class="nav-cta">Design My Simulator</a>
+		</div>
 		<!-- Hero Section -->
 		<section class="hero-section">
 			<div class="container">
@@ -132,25 +137,22 @@ templ Option2Home() {
 			<div class="experience-content">
 				<div class="experience-text">
 					<span class="section-eyebrow-light">The Experience</span>
-					<h2 class="section-title-light">Play Legendary Courses at Home</h2>
+					<h2 class="section-title-light">Play Every Course You've Ever Dreamed Of</h2>
 					<p class="experience-description">
-						Access the world's most
-						exclusive courses without leaving your home. Our simulators deliver
-						photorealistic graphics, accurate physics, and the authentic feel
-						of championship golf.
+            We partner with the world's leading simulation platforms—Foresight, Trackman, and Uneekor—to give you unparalleled access. Whether you're training on the data-rich environments of St Andrews and Pebble Beach through E6 Connect, or enjoying the ultra-realistic graphics of FSX Play, your golf season just got a massive extension. No other custom builder offers this flexibility and scale.
 					</p>
 					<div class="experience-stats">
 						<div class="stat-item">
-							<div class="stat-number">200+</div>
+							<div class="stat-number">500+</div>
 							<div class="stat-label">World-Class Courses</div>
 						</div>
 						<div class="stat-item">
 							<div class="stat-number">99.9%</div>
-							<div class="stat-label">Shot Accuracy</div>
+							<div class="stat-label">Tour-Level Accuracy</div>
 						</div>
 						<div class="stat-item">
 							<div class="stat-number">4K</div>
-							<div class="stat-label">Ultra HD Graphics</div>
+							<div class="stat-label">High-Fidelity Course Modeling</div>
 						</div>
 					</div>
 				</div>
@@ -244,6 +246,23 @@ templ Option2Home() {
 										<option>Consultation Call</option>
 										<option>Site Visit</option>
 									</select>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label for="budget" class="form-label">Budget Range</label>
+									<select id="budget" name="budget" class="form-input">
+										<option value="">Select budget range</option>
+										<option value="under-25k">Under $25,000</option>
+										<option value="25k-50k">$25,000 - $50,000</option>
+										<option value="50k-75k">$50,000 - $75,000</option>
+										<option value="75k-100k">$75,000 - $100,000</option>
+										<option value="over-100k">Over $100,000</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="dimensions" class="form-label">Room Dimensions</label>
+									<input type="text" id="dimensions" name="dimensions" class="form-input" placeholder="e.g., 15' x 12' x 9'"/>
 								</div>
 							</div>
 							<div class="form-group">
