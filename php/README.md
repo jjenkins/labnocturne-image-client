@@ -4,25 +4,26 @@ PHP client library for the [Lab Nocturne Images API](https://images.labnocturne.
 
 ## Installation
 
-Due to Composer's subdirectory limitations, use a path repository:
+### Via Packagist (Recommended)
 
 ```bash
-# Clone the repository
-git clone https://github.com/jjenkins/labnocturne-image-client.git
+composer require labnocturne/image-client
 ```
 
-In your project's `composer.json`:
+### Via GitHub (Alternative)
+
+If you need to install directly from GitHub:
 
 ```json
 {
     "repositories": [
         {
-            "type": "path",
-            "url": "../labnocturne-image-client/php"
+            "type": "vcs",
+            "url": "https://github.com/jjenkins/labnocturne-image-client"
         }
     ],
     "require": {
-        "labnocturne/image-client": "*"
+        "labnocturne/image-client": "^1.0"
     }
 }
 ```

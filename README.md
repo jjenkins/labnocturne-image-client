@@ -35,7 +35,9 @@ npm install && npm link
 
 ### PHP
 
-Clone the repository and use a path repository in your `composer.json`. See [PHP README](php/README.md) for details.
+```bash
+composer require labnocturne/image-client
+```
 
 ## Quick Start Examples
 
@@ -214,8 +216,8 @@ Detailed documentation for each language:
 | **Python** | `pip install git+...#subdirectory=python` | Direct GitHub install ✅ |
 | **Go** | `go get github.com/.../go/labnocturne` | Native monorepo support ✅ |
 | **Ruby** | Gemfile with `git:` + `glob:` | Bundler git support ✅ |
+| **PHP** | `composer require labnocturne/image-client` | Packagist registry ✅ |
 | **JavaScript** | Clone + `npm link` | npm subdirectory workaround |
-| **PHP** | Clone + path repository | Composer path repository |
 
 ## Error Handling
 
