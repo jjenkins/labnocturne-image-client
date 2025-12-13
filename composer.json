@@ -1,0 +1,40 @@
+{
+    "name": "labnocturne/image-client",
+    "description": "PHP client for Lab Nocturne Images API - Multi-language monorepo",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["images", "cdn", "upload", "storage", "api", "labnocturne"],
+    "authors": [
+        {
+            "name": "Lab Nocturne",
+            "email": "support@labnocturne.com",
+            "homepage": "https://github.com/jjenkins/labnocturne-image-client"
+        }
+    ],
+    "homepage": "https://github.com/jjenkins/labnocturne-image-client",
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "LabNocturne\\": "php/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LabNocturne\\Tests\\": "php/tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0-dev"
+        }
+    }
+}
