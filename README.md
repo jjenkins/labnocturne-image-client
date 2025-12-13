@@ -1,25 +1,150 @@
-# Lab Nocturne Images API - Client Examples
+# Lab Nocturne Images API - Client Libraries
 
-Developer-friendly code examples for integrating with the Lab Nocturne Images API. Get up and running in under 60 seconds.
+Multi-language client libraries for the [Lab Nocturne Images API](https://images.labnocturne.com).
 
-## Quick Start
+A simple, curl-first image storage service. No dashboards, no configuration required. Upload images and get CDN URLs instantly.
 
-The Lab Nocturne Images API is a simple, curl-first image storage service. No dashboards, no configuration required.
+## Quick Install
+
+### Python
+
+```bash
+pip install git+https://github.com/jjenkins/labnocturne-image-client.git#subdirectory=python
+```
+
+### Go
+
+```bash
+go get github.com/jjenkins/labnocturne-image-client/go/labnocturne
+```
+
+### Ruby
+
+```ruby
+# In Gemfile:
+gem 'labnocturne', git: 'https://github.com/jjenkins/labnocturne-image-client', glob: 'ruby/*.gemspec'
+```
+
+### JavaScript/Node.js
+
+```bash
+git clone https://github.com/jjenkins/labnocturne-image-client.git
+cd labnocturne-image-client/javascript
+npm install && npm link
+```
+
+### PHP
+
+Clone the repository and use a path repository in your `composer.json`. See [PHP README](php/README.md) for details.
+
+## Quick Start Examples
+
+### Python
+
+```python
+from labnocturne import LabNocturneClient
+
+# Generate test API key
+api_key = LabNocturneClient.generate_test_key()
+
+# Create client and upload
+client = LabNocturneClient(api_key)
+result = client.upload('photo.jpg')
+print(f"Image URL: {result['url']}")
+```
+
+[Full Python Documentation →](python/README.md)
+
+### Go
+
+```go
+import "github.com/jjenkins/labnocturne-image-client/go/labnocturne"
+
+// Generate test API key
+apiKey, _ := labnocturne.GenerateTestKey()
+
+// Create client and upload
+client := labnocturne.NewClient(apiKey)
+result, _ := client.Upload("photo.jpg")
+fmt.Println("Image URL:", result.URL)
+```
+
+[Full Go Documentation →](go/README.md)
+
+### Ruby
+
+```ruby
+require 'labnocturne'
+
+# Generate test API key
+api_key = LabNocturne::Client.generate_test_key
+
+# Create client and upload
+client = LabNocturne::Client.new(api_key)
+result = client.upload('photo.jpg')
+puts "Image URL: #{result['url']}"
+```
+
+[Full Ruby Documentation →](ruby/README.md)
+
+### JavaScript/Node.js
+
+```javascript
+import LabNocturneClient from 'labnocturne';
+
+// Generate test API key
+const apiKey = await LabNocturneClient.generateTestKey();
+
+// Create client and upload
+const client = new LabNocturneClient(apiKey);
+const result = await client.upload('photo.jpg');
+console.log('Image URL:', result.url);
+```
+
+[Full JavaScript Documentation →](javascript/README.md)
+
+### PHP
+
+```php
+use LabNocturne\LabNocturneClient;
+
+// Generate test API key
+$apiKey = LabNocturneClient::generateTestKey();
+
+// Create client and upload
+$client = new LabNocturneClient($apiKey);
+$result = $client->upload('photo.jpg');
+echo "Image URL: {$result['url']}\n";
+```
+
+[Full PHP Documentation →](php/README.md)
+
+## API Overview
+
+All client libraries implement the same core methods:
+
+| Method | Description |
+|--------|-------------|
+| `generateTestKey()` | Generate a test API key (static method) |
+| `upload(filePath)` | Upload an image file |
+| `listFiles(page, limit, sort)` | List uploaded files with pagination |
+| `getStats()` | Get usage statistics |
+| `deleteFile(imageId)` | Delete an image (soft delete) |
+
+## How It Works
 
 ### 1. Get a Test API Key
+
+No signup required for testing:
 
 ```bash
 curl https://images.labnocturne.com/key
 ```
 
-Response:
-```json
-{
-  "api_key": "ln_test_abc123...",
-  "type": "test",
-  "expires_in": "7 days"
-}
-```
+Returns a test key with:
+- 10MB file size limit
+- 7-day file retention
+- Perfect for development
 
 ### 2. Upload an Image
 
@@ -29,23 +154,15 @@ curl -X POST https://images.labnocturne.com/upload \
   -F "file=@photo.jpg"
 ```
 
-Response:
-```json
-{
-  "id": "img_01jcd8x9k2n...",
-  "url": "https://cdn.labnocturne.com/i/01jcd8x9k2n...jpg",
-  "size": 245678,
-  "mime_type": "image/jpeg"
-}
-```
+Returns a CDN URL you can use immediately.
 
 ### 3. Use Your Image
-
-The URL returned is a CloudFront CDN URL - just use it directly in your HTML, app, or anywhere you need it:
 
 ```html
 <img src="https://cdn.labnocturne.com/i/01jcd8x9k2n...jpg" alt="My image">
 ```
+
+The URL is a CloudFront CDN URL - fast, global delivery.
 
 ## API Endpoints
 
@@ -58,76 +175,51 @@ The URL returned is a CloudFront CDN URL - just use it directly in your HTML, ap
 | GET | `/stats` | Get usage statistics |
 | DELETE | `/i/:id` | Delete an image (soft delete) |
 
-## Language Examples
-
-Choose your language to see complete working examples:
-
-- **[curl](examples/curl/)** - Command-line examples (start here!)
-- **[JavaScript/Node.js](examples/javascript/)** - Node.js and browser examples
-- **[Python](examples/python/)** - Using the requests library
-- **[Go](examples/go/)** - Native Go client
-- **[Ruby](examples/ruby/)** - Using net/http
-- **[PHP](examples/php/)** - Using cURL and Guzzle
-
 ## Key Features
 
-### Test Keys
+### Test Keys (`ln_test_*`)
 - Generate instantly without signup
-- Prefix: `ln_test_*`
 - 10MB file size limit
 - Files expire after 7 days
 - Perfect for development and testing
 
-### Live Keys
+### Live Keys (`ln_live_*`)
 - Require email + payment
-- Prefix: `ln_live_*`
 - 100MB file size limit
 - Files stored permanently
 - Production-ready
 
-## Common Operations
+## Supported Image Formats
 
-### Upload an Image
-```bash
-POST /upload
-Authorization: Bearer ln_test_abc123...
-Content-Type: multipart/form-data
+- JPEG (`.jpg`, `.jpeg`)
+- PNG (`.png`)
+- GIF (`.gif`)
+- WebP (`.webp`)
 
-file=@photo.jpg
-```
+## Language-Specific Documentation
 
-### List Images
-```bash
-GET /files?page=1&limit=50&sort=created_desc
-Authorization: Bearer ln_test_abc123...
-```
+Detailed documentation for each language:
 
-### Get Usage Stats
-```bash
-GET /stats
-Authorization: Bearer ln_test_abc123...
-```
+- **[Python](python/README.md)** - Full Python client documentation with examples
+- **[Go](go/README.md)** - Full Go client documentation with examples
+- **[Ruby](ruby/README.md)** - Full Ruby client documentation with examples
+- **[JavaScript/Node.js](javascript/README.md)** - Full JavaScript client documentation with examples
+- **[PHP](php/README.md)** - Full PHP client documentation with examples
+- **[curl](examples/curl/README.md)** - Command-line examples for testing
 
-Returns:
-```json
-{
-  "storage_used_bytes": 1234567,
-  "storage_used_mb": 1.18,
-  "file_count": 42,
-  "quota_bytes": 10485760,
-  "quota_mb": 10
-}
-```
+## Installation Methods
 
-### Delete an Image
-```bash
-DELETE /i/img_01jcd8x9k2n...
-Authorization: Bearer ln_test_abc123...
-```
+| Language | Method | Notes |
+|----------|--------|-------|
+| **Python** | `pip install git+...#subdirectory=python` | Direct GitHub install ✅ |
+| **Go** | `go get github.com/.../go/labnocturne` | Native monorepo support ✅ |
+| **Ruby** | Gemfile with `git:` + `glob:` | Bundler git support ✅ |
+| **JavaScript** | Clone + `npm link` | npm subdirectory workaround |
+| **PHP** | Clone + path repository | Composer path repository |
 
 ## Error Handling
 
-All errors return JSON with helpful information:
+All APIs return JSON errors with helpful messages:
 
 ```json
 {
@@ -146,31 +238,20 @@ Common HTTP status codes:
 - `413` - File too large
 - `500` - Server error
 
-## File Formats
+## Contributing
 
-Supported image formats:
-- JPEG (`.jpg`, `.jpeg`)
-- PNG (`.png`)
-- GIF (`.gif`)
-- WebP (`.webp`)
-
-## Limits
-
-### Test Keys (`ln_test_*`)
-- Max file size: 10MB
-- File retention: 7 days
-- No cost
-
-### Live Keys (`ln_live_*`)
-- Max file size: 100MB
-- File retention: Permanent
-- Pay as you go pricing
-
-## Need Help?
-
-- API Documentation: https://images.labnocturne.com/docs
-- GitHub Issues: https://github.com/jjenkins/labnocturne-image-client/issues
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT License - See [LICENSE](LICENSE) for details.
+
+## Links
+
+- **API Documentation**: https://images.labnocturne.com/docs
+- **GitHub Issues**: https://github.com/jjenkins/labnocturne-image-client/issues
+- **Main Project**: https://github.com/jjenkins/labnocturne
+
+## Need Help?
+
+Check the language-specific README files for detailed examples and usage instructions.

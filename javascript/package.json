@@ -1,0 +1,42 @@
+{
+  "name": "labnocturne",
+  "version": "1.0.0",
+  "description": "JavaScript/Node.js client for Lab Nocturne Images API",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "types": "./types/index.d.ts"
+    }
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjenkins/labnocturne-image-client.git",
+    "directory": "javascript"
+  },
+  "keywords": [
+    "images",
+    "cdn",
+    "upload",
+    "storage",
+    "api",
+    "labnocturne"
+  ],
+  "author": "Lab Nocturne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jjenkins/labnocturne-image-client/issues"
+  },
+  "homepage": "https://github.com/jjenkins/labnocturne-image-client/tree/main/javascript#readme",
+  "dependencies": {
+    "form-data": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

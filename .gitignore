@@ -1,16 +1,36 @@
-# Binaries
-/bin/
-**/bin/
-/tmp/
-**/tmp/
+# API Keys and Secrets
+.env
+.env.local
+.envrc
+.envrc.local
+*.key
+api_key.txt
 
-# Generated templ files
-*_templ.go
+# Python
+python/build/
+python/dist/
+python/*.egg-info/
+python/.pytest_cache/
+python/.tox/
+python/__pycache__/
+python/**/__pycache__/
+python/**/*.pyc
+python/.coverage
+python/htmlcov/
 
-# Air log
-air.log
+# JavaScript/Node.js
+javascript/node_modules/
+javascript/dist/
+javascript/coverage/
+javascript/.npm/
+javascript/package-lock.json
+javascript/.nyc_output/
 
 # Go
+go/bin/
+go/*.test
+go/coverage.out
+go/go.sum
 *.exe
 *.exe~
 *.dll
@@ -19,20 +39,52 @@ air.log
 *.test
 *.out
 
+# Ruby
+ruby/pkg/
+ruby/*.gem
+ruby/Gemfile.lock
+ruby/.bundle/
+ruby/vendor/
+
+# PHP
+php/vendor/
+php/composer.lock
+php/composer.phar
+php/.phpunit.cache/
+
+# Binaries
+/bin/
+**/bin/
+/tmp/
+**/tmp/
+**/app
+
+# Generated templ files
+*_templ.go
+
+# Air log
+air.log
+
 # Database
 /db/pgdata/
 
-# Environment
-.env
-.envrc
-.envrc.local
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# macOS
+# OS
 .DS_Store
+Thumbs.db
 
 # Test files
+test_image.jpg
+test_image.png
+uploaded_*.jpg
+uploaded_*.png
 **/test_images/
-**/.claude/
 *.pkg
 
 # Working notes and documentation
@@ -43,10 +95,10 @@ TWEET_*.txt
 TWITTER_*.md
 preview.html
 
-# Built binaries
-**/bin/images
-**/app
-# Compiled binaries matching directory names
-flex/flex
-framework/framework
-images/images
+# Logs
+*.log
+npm-debug.log*
+*.log.*
+
+# Claude
+.claude/
