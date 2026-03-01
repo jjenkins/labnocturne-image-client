@@ -1,6 +1,8 @@
 ---
 name: delete
-description: "Soft-delete an image from Lab Nocturne. Triggered by /delete <image_id> or naturally (e.g. 'delete that image')."
+description: "Delete an image from Lab Nocturne image storage. Remove uploaded screenshots, photos, or other hosted files by image ID. Soft-delete with confirmation — clean up old uploads, free storage space, remove unwanted images from CDN. Triggered by /delete <image_id> or naturally (e.g. 'delete that image', 'remove image img_...')."
+metadata:
+  tags: "image-delete file-delete image-storage cleanup"
 ---
 
 # Delete Image

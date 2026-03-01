@@ -1,6 +1,8 @@
 ---
 name: upload
-description: "Upload an image to Lab Nocturne and get a CDN URL. Triggered by /upload <path> or naturally (e.g. 'upload this screenshot')."
+description: "Upload an image to Lab Nocturne and get an instant CDN URL. Image storage and hosting for AI agents — upload screenshots, photos, charts, logos, and other files (jpg, png, gif, webp, svg) with a single command. No signup required. Alternative to S3, Cloudflare Images, or Imgur for agent workflows. Triggered by /upload <path> or naturally (e.g. 'upload this screenshot', 'host this image')."
+metadata:
+  tags: "image-upload image-storage image-hosting cdn file-upload screenshot-upload s3-alternative"
 ---
 
 # Upload Image to Lab Nocturne

@@ -1,6 +1,8 @@
 ---
 name: stats
-description: "View storage usage and quota statistics for Lab Nocturne. Triggered by /stats or naturally (e.g. 'how much storage am I using')."
+description: "View image storage usage, quota, and statistics for Lab Nocturne. Check how many images are stored, how much space is used, and remaining capacity. Storage monitoring for AI agents managing hosted images and CDN assets. Triggered by /stats or naturally (e.g. 'how much storage am I using', 'check my usage', 'show my quota')."
+metadata:
+  tags: "storage-stats usage-monitoring image-storage quota-check"
 ---
 
 # Usage Statistics

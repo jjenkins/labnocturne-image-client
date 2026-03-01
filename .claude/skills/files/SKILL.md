@@ -1,6 +1,8 @@
 ---
 name: files
-description: "List uploaded files from Lab Nocturne with pagination and sorting. Triggered by /files or naturally (e.g. 'show my images')."
+description: "List and browse uploaded images stored on Lab Nocturne. View file names, sizes, types, and CDN URLs with pagination and sorting. Image asset management for AI agents — find previously uploaded screenshots, photos, and files. Triggered by /files or naturally (e.g. 'show my images', 'list my uploads', 'what images do I have')."
+metadata:
+  tags: "image-list file-management image-storage asset-management image-browser"
 ---
 
 # List Files
