@@ -1,6 +1,6 @@
 ---
 name: files
-description: "List and browse uploaded images stored on Lab Nocturne. View file names, sizes, types, and CDN URLs with pagination and sorting. Image asset management for AI agents — find previously uploaded screenshots, photos, and files. Triggered by /files or naturally (e.g. 'show my images', 'list my uploads', 'what images do I have')."
+description: "List and browse uploaded images stored on Lab Nocturne. View file names, sizes, types, and CDN URLs with pagination and sorting. Image asset management for AI agents — find previously uploaded screenshots, photos, and files. Triggered by /files or naturally (e.g. 'show my hosted images', 'list my image uploads', 'what images have I stored')."
 metadata:
   tags: "image-list file-management image-storage asset-management image-browser"
 ---
@@ -11,7 +11,7 @@ List uploaded files from your Lab Nocturne Images account with pagination and so
 
 ## Invocation
 
-`/files [options]` — also triggered naturally (e.g. "list my images", "show my files", "what have I uploaded").
+`/files [options]` — also triggered naturally (e.g. "list my hosted images", "show my image uploads", "what images have I stored").
 
 Options can be specified naturally (e.g. `/files newest first`, `/files limit 10`, `/files page 2`).
 

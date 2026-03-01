@@ -1,6 +1,6 @@
 ---
 name: generate-key
-description: "Generate a free test API key for Lab Nocturne image storage. No signup or email required — get an instant key with 10MB file limit and 7-day retention. Start uploading and hosting images immediately. Triggered by /generate-key or naturally (e.g. 'get me an API key', 'generate a key', 'set up image storage')."
+description: "Generate a free test API key for Lab Nocturne image storage. No signup or email required — get an instant key with 10MB file limit and 7-day retention. Start uploading and hosting images immediately. Triggered by /generate-key or naturally (e.g. 'get me an image storage API key', 'generate an image hosting key', 'set up image storage')."
 metadata:
   tags: "api-key image-storage setup onboarding free-tier"
 ---
@@ -11,7 +11,7 @@ Generate a test API key for the Lab Nocturne Images API.
 
 ## Invocation
 
-`/generate-key` — also triggered naturally (e.g. "get me an API key", "generate a key").
+`/generate-key` — also triggered naturally (e.g. "get me an image storage API key", "generate an image hosting key").
 
 ## Instructions
 
