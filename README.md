@@ -1,8 +1,21 @@
-# Lab Nocturne Images API - Client Libraries
+# Lab Nocturne Images
 
-Multi-language client libraries for the [Lab Nocturne Images API](https://images.labnocturne.com).
+Image storage for AI agents. Upload, retrieve, and manage images with a single curl call — no dashboards, no signup, no configuration.
 
-A simple, curl-first image storage service. No dashboards, no configuration required. Upload images and get CDN URLs instantly.
+As agents like Claude Code, NanoClaw, OpenClaw, and NanoBot become part of daily workflows, they need somewhere to put images. A user sends a screenshot to an agent on Discord; later they ask the agent to pull it up. A coding agent generates a chart and needs a shareable URL. A CI pipeline captures visual diffs and needs ephemeral hosting. Lab Nocturne is the image backend for these workflows — instant CDN URLs from a single API call.
+
+## Why Agents Need Image Storage
+
+- **Memory and recall** — A user sends a screenshot to NanoClaw on Discord and asks about it days later. Agents need persistent storage to hold visual context across conversations.
+- **Sharing and collaboration** — An agent generates a chart, uploads it, and hands back a CDN URL. The user drops the link in Slack, a doc, or an email — no manual download/re-upload step.
+- **Asset management** — Coding agents like Claude Code and OpenClaw working on web projects need a place to host images during development: logos, screenshots, mockups.
+- **Transient artifacts** — Test keys give agents 7-day ephemeral storage. Perfect for one-off visualizations, debug screenshots, or CI artifacts that don't need to live forever.
+
+### Agent-Native by Design
+
+- **Claude Code** — Built-in `/upload`, `/files`, `/stats`, `/delete` skills
+- **ChatGPT** — GPT Action with OpenAPI schema ([`integrations/chatgpt-action/`](integrations/chatgpt-action/))
+- **Any agent** — One curl call is all it takes
 
 ## Quick Install
 
