@@ -17,6 +17,18 @@ As agents like Claude Code, NanoClaw, OpenClaw, and NanoBot become part of daily
 - **ChatGPT** — GPT Action with OpenAPI schema ([`integrations/chatgpt-action/`](integrations/chatgpt-action/))
 - **Any agent** — One curl call is all it takes
 
+### Setting Up Claude Code Skills
+
+Clone the repo and the skills are available automatically when Claude Code runs from the project directory:
+
+```bash
+git clone https://github.com/jjenkins/labnocturne-image-client.git
+cd labnocturne-image-client
+# Skills like /upload, /files, /stats, /delete are now available in Claude Code
+```
+
+If you only want the skills without the client libraries, copy the `.claude/` directory into your own project. Set `LABNOCTURNE_API_KEY` in your environment to use a specific key, or leave it unset and the skills will auto-generate a test key.
+
 ## Quick Install
 
 ### Python
