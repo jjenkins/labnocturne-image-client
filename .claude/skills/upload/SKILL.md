@@ -49,6 +49,7 @@ curl -s -X POST \
   "id": "img_...",
   "url": "https://cdn.labnocturne.com/...",
   "size": 123456,
+  "mime_type": "image/png",
   "uploaded_at": "2025-01-01T00:00:00Z"
 }
 ```

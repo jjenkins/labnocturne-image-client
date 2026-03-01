@@ -29,6 +29,16 @@ Lab Nocturne Images is a simple, curl-first image storage service. This repo pro
 ### Supported Formats
 JPEG, PNG, GIF, WebP
 
+## Available Skills
+
+| Skill | Command | Description |
+|-------|---------|-------------|
+| Upload | `/upload <path>` | Upload an image and get a CDN URL |
+| List Files | `/files [options]` | List uploaded files with pagination and sorting |
+| Statistics | `/stats` | View storage usage and quota statistics |
+| Delete | `/delete <image_id>` | Soft-delete an image |
+| Generate Key | `/generate-key` | Generate a test API key |
+
 ## Working with this Repository
 
 When adding or modifying examples:
