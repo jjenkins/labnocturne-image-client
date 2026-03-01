@@ -100,5 +100,8 @@ preview.html
 npm-debug.log*
 *.log.*
 
-# Claude
-.claude/
+# Claude (ignore private config, keep shared skills/commands/instructions)
+.claude/*
+!.claude/instructions.md
+!.claude/commands/
+!.claude/skills/
