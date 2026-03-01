@@ -8,7 +8,7 @@ Add to your Gemfile:
 
 ```ruby
 gem 'labnocturne',
-    git: 'https://github.com/jjenkins/labnocturne-image-client',
+    git: 'https://github.com/jjenkins/agent-image-skills',
     glob: 'ruby/*.gemspec'
 ```
 
@@ -231,6 +231,6 @@ MIT License - See [LICENSE](../LICENSE) for details.
 
 ## Links
 
-- [Main Repository](https://github.com/jjenkins/labnocturne-image-client)
+- [Main Repository](https://github.com/jjenkins/agent-image-skills)
 - [API Documentation](https://images.labnocturne.com/docs)
-- [Other Language Clients](https://github.com/jjenkins/labnocturne-image-client#readme)
+- [Other Language Clients](https://github.com/jjenkins/agent-image-skills#readme)

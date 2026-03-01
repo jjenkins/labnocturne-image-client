@@ -22,14 +22,14 @@ As agents like Claude Code, NanoClaw, OpenClaw, and NanoBot become part of daily
 Install all five skills with the skills CLI:
 
 ```bash
-npx skills add jjenkins/labnocturne-image-client
+npx skills add jjenkins/agent-image-skills
 ```
 
 Or clone the repo and the skills are available automatically when Claude Code runs from the project directory:
 
 ```bash
-git clone https://github.com/jjenkins/labnocturne-image-client.git
-cd labnocturne-image-client
+git clone https://github.com/jjenkins/agent-image-skills.git
+cd agent-image-skills
 # /upload, /files, /stats, /delete, /generate-key are now available
 ```
 
@@ -40,27 +40,27 @@ Set `LABNOCTURNE_API_KEY` in your environment to use a specific key, or leave it
 ### Python
 
 ```bash
-pip install git+https://github.com/jjenkins/labnocturne-image-client.git#subdirectory=python
+pip install git+https://github.com/jjenkins/agent-image-skills.git#subdirectory=python
 ```
 
 ### Go
 
 ```bash
-go get github.com/jjenkins/labnocturne-image-client/go/labnocturne
+go get github.com/jjenkins/agent-image-skills/go/labnocturne
 ```
 
 ### Ruby
 
 ```ruby
 # In Gemfile:
-gem 'labnocturne', git: 'https://github.com/jjenkins/labnocturne-image-client', glob: 'ruby/*.gemspec'
+gem 'labnocturne', git: 'https://github.com/jjenkins/agent-image-skills', glob: 'ruby/*.gemspec'
 ```
 
 ### JavaScript/Node.js
 
 ```bash
-git clone https://github.com/jjenkins/labnocturne-image-client.git
-cd labnocturne-image-client/javascript
+git clone https://github.com/jjenkins/agent-image-skills.git
+cd agent-image-skills/javascript
 npm install && npm link
 ```
 
@@ -91,7 +91,7 @@ print(f"Image URL: {result['url']}")
 ### Go
 
 ```go
-import "github.com/jjenkins/labnocturne-image-client/go/labnocturne"
+import "github.com/jjenkins/agent-image-skills/go/labnocturne"
 
 // Generate test API key
 apiKey, _ := labnocturne.GenerateTestKey()
@@ -282,7 +282,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 ## Links
 
 - **API Documentation**: https://images.labnocturne.com/docs
-- **GitHub Issues**: https://github.com/jjenkins/labnocturne-image-client/issues
+- **GitHub Issues**: https://github.com/jjenkins/agent-image-skills/issues
 - **Main Project**: https://github.com/jjenkins/labnocturne
 
 ## Need Help?

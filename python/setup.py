@@ -15,11 +15,11 @@ setup(
     description="Python client for Lab Nocturne Images API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/jjenkins/labnocturne-image-client",
+    url="https://github.com/jjenkins/agent-image-skills",
     project_urls={
-        "Bug Tracker": "https://github.com/jjenkins/labnocturne-image-client/issues",
-        "Documentation": "https://github.com/jjenkins/labnocturne-image-client/tree/main/python",
-        "Source Code": "https://github.com/jjenkins/labnocturne-image-client/tree/main/python",
+        "Bug Tracker": "https://github.com/jjenkins/agent-image-skills/issues",
+        "Documentation": "https://github.com/jjenkins/agent-image-skills/tree/main/python",
+        "Source Code": "https://github.com/jjenkins/agent-image-skills/tree/main/python",
     },
     packages=find_packages(),
     classifiers=[

@@ -8,8 +8,8 @@ Due to npm's subdirectory limitations, install locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/jjenkins/labnocturne-image-client.git
-cd labnocturne-image-client/javascript
+git clone https://github.com/jjenkins/agent-image-skills.git
+cd agent-image-skills/javascript
 
 # Install dependencies and link globally
 npm install
@@ -24,7 +24,7 @@ npm link labnocturne
 ```json
 {
   "dependencies": {
-    "labnocturne": "file:../labnocturne-image-client/javascript"
+    "labnocturne": "file:../agent-image-skills/javascript"
   }
 }
 ```
@@ -271,6 +271,6 @@ MIT License - See [LICENSE](../LICENSE) for details.
 
 ## Links
 
-- [Main Repository](https://github.com/jjenkins/labnocturne-image-client)
+- [Main Repository](https://github.com/jjenkins/agent-image-skills)
 - [API Documentation](https://images.labnocturne.com/docs)
-- [Other Language Clients](https://github.com/jjenkins/labnocturne-image-client#readme)
+- [Other Language Clients](https://github.com/jjenkins/agent-image-skills#readme)

@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jjenkins/labnocturne-image-client.git",
+    "url": "git+https://github.com/jjenkins/agent-image-skills.git",
     "directory": "javascript"
   },
   "keywords": [
@@ -30,9 +30,9 @@
   "author": "Lab Nocturne",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jjenkins/labnocturne-image-client/issues"
+    "url": "https://github.com/jjenkins/agent-image-skills/issues"
   },
-  "homepage": "https://github.com/jjenkins/labnocturne-image-client/tree/main/javascript#readme",
+  "homepage": "https://github.com/jjenkins/agent-image-skills/tree/main/javascript#readme",
   "dependencies": {
     "form-data": "^4.0.0"
   },

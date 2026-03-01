@@ -8,10 +8,10 @@
         {
             "name": "Lab Nocturne",
             "email": "support@labnocturne.com",
-            "homepage": "https://github.com/jjenkins/labnocturne-image-client"
+            "homepage": "https://github.com/jjenkins/agent-image-skills"
         }
     ],
-    "homepage": "https://github.com/jjenkins/labnocturne-image-client/tree/main/php",
+    "homepage": "https://github.com/jjenkins/agent-image-skills/tree/main/php",
     "require": {
         "php": ">=7.4",
         "ext-curl": "*",

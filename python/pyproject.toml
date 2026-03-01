@@ -40,7 +40,7 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jjenkins/labnocturne-image-client"
-Repository = "https://github.com/jjenkins/labnocturne-image-client"
-Documentation = "https://github.com/jjenkins/labnocturne-image-client/tree/main/python"
-"Bug Tracker" = "https://github.com/jjenkins/labnocturne-image-client/issues"
+Homepage = "https://github.com/jjenkins/agent-image-skills"
+Repository = "https://github.com/jjenkins/agent-image-skills"
+Documentation = "https://github.com/jjenkins/agent-image-skills/tree/main/python"
+"Bug Tracker" = "https://github.com/jjenkins/agent-image-skills/issues"

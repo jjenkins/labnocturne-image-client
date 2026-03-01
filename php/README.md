@@ -19,7 +19,7 @@ If you need to install directly from GitHub:
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/jjenkins/labnocturne-image-client"
+            "url": "https://github.com/jjenkins/agent-image-skills"
         }
     ],
     "require": {
@@ -306,6 +306,6 @@ MIT License - See [LICENSE](../LICENSE) for details.
 
 ## Links
 
-- [Main Repository](https://github.com/jjenkins/labnocturne-image-client)
+- [Main Repository](https://github.com/jjenkins/agent-image-skills)
 - [API Documentation](https://images.labnocturne.com/docs)
-- [Other Language Clients](https://github.com/jjenkins/labnocturne-image-client#readme)
+- [Other Language Clients](https://github.com/jjenkins/agent-image-skills#readme)

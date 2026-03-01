@@ -5,7 +5,7 @@ Go client library for the [Lab Nocturne Images API](https://images.labnocturne.c
 ## Installation
 
 ```bash
-go get github.com/jjenkins/labnocturne-image-client/go/labnocturne
+go get github.com/jjenkins/agent-image-skills/go/labnocturne
 ```
 
 ## Requirements
@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/jjenkins/labnocturne-image-client/go/labnocturne"
+	"github.com/jjenkins/agent-image-skills/go/labnocturne"
 )
 
 func main() {
@@ -241,7 +241,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/jjenkins/labnocturne-image-client/go/labnocturne"
+	"github.com/jjenkins/agent-image-skills/go/labnocturne"
 )
 
 func main() {
@@ -348,6 +348,6 @@ MIT License - See [LICENSE](../LICENSE) for details.
 
 ## Links
 
-- [Main Repository](https://github.com/jjenkins/labnocturne-image-client)
+- [Main Repository](https://github.com/jjenkins/agent-image-skills)
 - [API Documentation](https://images.labnocturne.com/docs)
-- [Other Language Clients](https://github.com/jjenkins/labnocturne-image-client#readme)
+- [Other Language Clients](https://github.com/jjenkins/agent-image-skills#readme)

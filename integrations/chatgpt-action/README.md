@@ -285,5 +285,5 @@ MIT License - See [../../LICENSE](../../LICENSE) for details.
 
 ## Support
 
-- [GitHub Issues](https://github.com/jjenkins/labnocturne-image-client/issues)
+- [GitHub Issues](https://github.com/jjenkins/agent-image-skills/issues)
 - [API Documentation](https://images.labnocturne.com/docs)

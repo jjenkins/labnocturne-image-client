@@ -7,7 +7,7 @@ Python client library for the [Lab Nocturne Images API](https://images.labnoctur
 Install directly from GitHub:
 
 ```bash
-pip install git+https://github.com/jjenkins/labnocturne-image-client.git#subdirectory=python
+pip install git+https://github.com/jjenkins/agent-image-skills.git#subdirectory=python
 ```
 
 ## Requirements
@@ -198,7 +198,7 @@ if __name__ == '__main__':
 Install with development dependencies:
 
 ```bash
-pip install git+https://github.com/jjenkins/labnocturne-image-client.git#subdirectory=python[dev]
+pip install git+https://github.com/jjenkins/agent-image-skills.git#subdirectory=python[dev]
 ```
 
 Run tests:
@@ -225,6 +225,6 @@ MIT License - See [LICENSE](../LICENSE) for details.
 
 ## Links
 
-- [Main Repository](https://github.com/jjenkins/labnocturne-image-client)
+- [Main Repository](https://github.com/jjenkins/agent-image-skills)
 - [API Documentation](https://images.labnocturne.com/docs)
-- [Other Language Clients](https://github.com/jjenkins/labnocturne-image-client#readme)
+- [Other Language Clients](https://github.com/jjenkins/agent-image-skills#readme)

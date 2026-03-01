@@ -1,3 +1,3 @@
-module github.com/jjenkins/labnocturne-image-client/go
+module github.com/jjenkins/agent-image-skills/go
 
 go 1.21
