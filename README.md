@@ -39,7 +39,7 @@ Built for automation, not humans.
 |---------|--------------|------------|-------|----------|
 | **Test without signup** | ✅ Instant test keys | ❌ Email required | ⚠️ Sign-up flow | ❌ Email required |
 | **Ephemeral storage** | ✅ 7-day auto-cleanup | ❌ Pay for old files | ❌ No control | ❌ Manual deletion |
-| **Transparent pricing** | ✅ $5/mo → $20/mo | ⚠️ Free → $99/mo jump | ⚠️ Unstable | ⚠️ $89/mo → $249/mo |
+| **Transparent pricing** | ✅ $9/mo → $29/mo | ⚠️ Free → $99/mo jump | ⚠️ Unstable | ⚠️ $89/mo → $249/mo |
 | **Agent-first design** | ✅ Claude Code skills | ❌ Dashboard-only | ❌ No API docs | ❌ Marketing tools |
 | **API reliability** | ✅ CloudFront CDN | ✅ Good | ⚠️ Degrading | ✅ Good |
 | **Webhook callbacks** | 🔜 Coming soon | ✅ Yes | ❌ No | ✅ Yes |
@@ -254,8 +254,8 @@ The URL is a CloudFront CDN URL - fast, global delivery with 99.9% uptime.
 | Tier | Price | File Size Limit | Storage | Retention |
 |------|-------|-----------------|---------|-----------|
 | **Test** | Free | 10MB | 100MB | 7 days (auto-cleanup) |
-| **Starter** | $5/mo | 100MB | 10GB | Permanent |
-| **Pro** | $20/mo | 100MB | 100GB | Permanent |
+| **Starter** | $9/mo | 100MB | 10GB | Permanent |
+| **Pro** | $29/mo | 100MB | 100GB | Permanent |
 
 No surprise charges. No usage-based pricing. No bandwidth fees.
 
